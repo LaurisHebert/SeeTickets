@@ -1,4 +1,5 @@
 let d = document;
+let eventHTML = d.querySelector('#events');
 let language = d.documentElement.lang.substring(0, 2);
 
 let test = d.getElementsByClassName('event');
@@ -70,12 +71,30 @@ fetch('https://front.apirecette.digitick-ppe.com/v1.1/authorization/token', {
     }).then(r => {
         return r.json()
     }).then(function showEvents (eventsDatas) {
-        let event = eventsDatas._embedded['hours'];
-        for (let i = 0; i < event.length ; i++) {
-
-            console.log(event[i])
-            
-            
+        let eventData = eventsDatas._embedded['hours'];
+        let oldEvent = [];
+        for (let i = 0; i < eventData.length ; i++) {
+            if (oldEvent.includes(eventData[i].eventId) === false) {
+                console.log('test')
+                let urlEvent = 'https://front.apirecette.digitick-ppe.com/v1.1/catalog/events/'+ eventData[i].eventId +'?lang=' + language;      
+                fetch(urlEvent,{
+                    methode : 'get',
+                    headers : {
+                        'Accept': 'application/hal+json',
+                        'Authorization': token.tokenType + ' ' + token.accessToken
+                    }
+                }).then(r => r.json()).then( function getEvent ( event ){
+                    eventHTML.innerHTML +=
+                        '  <a href="reservation.html"\n' +
+                        '    class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">\n' +
+                        '    <img src="Contents/party.png" alt="party">\n' +
+                        '    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">' + event.name + '</h5>\n' +
+                        '    <p class="font-normal text-gray-700 dark:text-gray-400"> '+ eventData[i].dateStart +'- Le Duplex</p>\n' +
+                        '  </a>';
+                    console.log(event)
+                    }
+                )
+            }
         }
     })
 });
