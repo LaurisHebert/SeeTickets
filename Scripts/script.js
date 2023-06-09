@@ -2,6 +2,41 @@ let d = document;
 let eventHTML = d.querySelector('#events');
 let language = d.documentElement.lang.substring(0, 2);
 
+let test = d.getElementsByClassName('event');
+test.innerHTML = "Bonjour ce n'est qu'un test"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const salesChannelId = 13357;
 const userTypeId = 64;
 
@@ -41,8 +76,7 @@ fetch('https://front.apirecette.digitick-ppe.com/v1.1/authorization/token', {
         for (let i = 0; i < eventData.length ; i++) {
             if (oldEvent.includes(eventData[i].eventId) === false) {
                 console.log('test')
-                let urlEvent = 'https://front.apirecette.digitick-ppe.com/v1.1/catalog/events/'+ eventData[i].eventId +'?lang=' + language;
-
+                let urlEvent = 'https://front.apirecette.digitick-ppe.com/v1.1/catalog/events/'+ eventData[i].eventId +'?lang=' + language;      
                 fetch(urlEvent,{
                     methode : 'get',
                     headers : {

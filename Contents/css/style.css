@@ -82,6 +82,10 @@ button {
 
 }
 
+.casePlace {
+    background-color: #66c2c2;
+}
+
 /* .paiement {
     display: flex;
     flex-direction: row;
