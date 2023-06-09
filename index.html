@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Affichage des données</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="Scripts/script.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  <link rel="stylesheet" href="Contents\Css\style.css">
+  <title>SeeTickets</title>
 </head>
 
 <body>
-    <h1>Catégories</h1>
-    <ul id="categories-list"></ul>
+
+  <div class="langue">
+    <button id="multiLevelDropdownButton" data-dropdown-toggle="dropdown"
+      class="text-white bg-gray-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      type="button">Français <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg></button>
+  </div>
+  <!-- Dropdown menu -->
+  <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="multiLevelDropdownButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Anglais</a>
+      </li>
+      <li>
+        <div id="doubleDropdown"
+          class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+        </div>
+      </li>
+    </ul>
+
+
+  </div>
+  <h1>Nos évènements</h1>
+  <a href="reservation.html"
+    class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+    <img src="Contents/party.png" alt="party">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Hackathon Party</h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400">Ven. 16 juin 2023 - Le Duplex</p>
+  </a>
+
+
+
+
+
+
+
 </body>
 
 </html>
