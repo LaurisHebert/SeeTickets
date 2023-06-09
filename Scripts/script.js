@@ -1,6 +1,41 @@
 let d = document;
 let language = d.documentElement.lang.substring(0, 2);
 
+let test = d.getElementsByClassName('event');
+test.innerHTML = "Bonjour ce n'est qu'un test"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const salesChannelId = 13357;
 const userTypeId = 64;
 
@@ -38,7 +73,9 @@ fetch('https://front.apirecette.digitick-ppe.com/v1.1/authorization/token', {
         let event = eventsDatas._embedded['hours'];
         for (let i = 0; i < event.length ; i++) {
 
-            console.log(event[i].dateStart)
+            console.log(event[i])
+            
+            
         }
     })
 });
